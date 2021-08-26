@@ -22,8 +22,8 @@ class Navbar extends HTMLElement {
           </div>
           <div class="">
           <ul class="list-group">
-      
-          <li onclick="location.href = '/#text'"
+     
+          <li onclick="location.href = '${location.host == '127.0.0.1:5500' ? '#text' : '/docs/#text'}'"
           class="list-group-item" data-bs-dismiss="offcanvas" aria-label="Close" aria-current="true">
             text
            </li>
