@@ -8,7 +8,6 @@ export function inject() {
     }
 
     //---------------inject style-------------------
-    let localhost = (location.host == '127.0.0.1:5500') ? '.' : './docs';
 
     injector(
         'link',
@@ -23,7 +22,7 @@ export function inject() {
         'link',
         [
             { name: 'rel', value: 'stylesheet' },
-            { name: 'href', value: `${localhost}/style.css` },
+            { name: 'href', value: './style.css' },
         ],
         'head'
     )
@@ -32,7 +31,7 @@ export function inject() {
         'link',
         [
             { name: 'rel', value: 'stylesheet' },
-            { name: 'href', value: `${localhost}/assets/css/prism.css` },
+            { name: 'href', value: './assets/css/style.css' },
         ],
         'head'
     )
@@ -51,7 +50,7 @@ export function inject() {
     injector(
         'script',
         [
-            { name: 'src', value: `${localhost}/app/components/navbar.js` }
+            { name: 'src', value: './app/components/navbar.js' }
         ],
         'body'
     )
@@ -59,7 +58,7 @@ export function inject() {
     injector(
         'script',
         [
-            { name: 'src', value: `${localhost}/app/components/code.js` }
+            { name: 'src', value: './app/components/code.js' }
         ],
         'body'
     )
@@ -75,7 +74,7 @@ export function inject() {
         injector(
             'script',
             [
-                { name: 'src', value: `${localhost}/assets/js/prism.js` }
+                { name: 'src', value: './assets/js/prism.js' }
             ],
             'body'
         )
