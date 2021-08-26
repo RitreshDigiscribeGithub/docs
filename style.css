@@ -1,0 +1,83 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css');
+
+@import url('./prism.css');
+
+/*okaidia :  https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css' */
+
+#root {
+  height: calc(100vh - 56px);
+  background-color: rgb(250, 250, 250);
+  padding: 12px;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+pre {
+  background-color: #2c2c2c;
+  border-radius: 0px;
+  padding: 0px !important;
+}
+.source-code {
+  background-color: #dfdbdb;
+  border-radius: 8px 8px 0px 0px;
+  -moz-border-radius: 8px 8px 0px 0px;
+  -webkit-border-radius: 8px 8px 0px 0px;
+  border: 0px solid #000000;
+  text-align: end;
+  padding: 5px 20px 0px 0px;
+  position: relative;
+  margin: 15px 0px 0px 0px;
+}
+.source-code::before {
+  content: attr(data-doc);
+  position: absolute;
+  top: 5px;
+  left: 17px;
+  font-weight: 700;
+}
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0px;
+  overflow: auto;
+}
+.code_dot {
+  font-size: 17px !important;
+  padding: 0px;
+}
+.code_dot:nth-child(1) {
+  color: #fb5854;
+}
+.code_dot:nth-child(2) {
+  color: #febb40;
+}
+.code_dot:nth-child(3) {
+  color: #34c848;
+}
+[data-list] {
+  position: relative;
+  margin-top: 30px;
+}
+
+[data-list]::before {
+  content: attr(data-list);
+  font-size: 20px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+[data-title] {
+  position: relative;
+  padding-bottom: 19px;
+}
+[data-title]::before {
+  content: attr(data-title);
+  font-size: 20px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+  text-transform: capitalize;
+}
