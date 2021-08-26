@@ -31,7 +31,7 @@ export function inject() {
         'link',
         [
             { name: 'rel', value: 'stylesheet' },
-            { name: 'href', value: './assets/css/style.css' },
+            { name: 'href', value: './assets/css/prism.css' },
         ],
         'head'
     )
