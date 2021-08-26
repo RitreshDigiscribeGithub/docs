@@ -38,7 +38,8 @@ class Navbar extends HTMLElement {
   list() {
     return [
       { path: 'app-booting', topic: 'app booting' },
-      { path: 'fragment', topic: 'fragment' }
+      { path: 'fragment', topic: 'fragment' },
+      { path: 'jsx', topic: 'jsx react' }
     ]
   }
 
