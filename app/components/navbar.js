@@ -5,7 +5,8 @@ class Navbar extends HTMLElement {
     this.innerHTML = `<div class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="col-4">
           <a class="navbar-brand t-t-c" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          &nbsp;&nbsp;<i class="bi bi-list"></i>&nbsp;&nbsp;${this.getAttribute('title')}
+          &nbsp;&nbsp;<i class="bi bi-list"></i>&nbsp;&nbsp;
+          <span class="nav-title">title</span>
         </a>
         </div>
         <div class="col-8">
@@ -22,15 +23,30 @@ class Navbar extends HTMLElement {
           </div>
           <div class="">
           <ul class="list-group">
-     
-          <li onclick="location.href = '#text'"
-          class="list-group-item" data-bs-dismiss="offcanvas" aria-label="Close" aria-current="true">
-            text
-           </li>
+            ${this.list().map(e => {
+      return `<li onclick="location.href = '#${e.path}'"
+                class="list-group-item" data-bs-dismiss="offcanvas" aria-label="Close" aria-current="true">
+                ${e.topic}
+                 </li>`
+    }).join('\n')
+      }
            </ul>
           </div>
       </div>`
   }
+
+  list() {
+    return [
+      { path: 'app-booting', topic: 'app booting' },
+      { path: 'fragment', topic: 'fragment' }
+    ]
+  }
+
+  titlePush() {
+    return location.hash
+  }
 }
 
 window.customElements.define('app-navbar', Navbar)
+
+

@@ -79,3 +79,6 @@ pre[class*='language-'] {
   font-weight: 600;
   text-transform: capitalize;
 }
+.nav-title {
+  text-transform: capitalize;
+}
