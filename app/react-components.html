@@ -1,0 +1,47 @@
+<ul data-list="header component">
+    <li>Functional Component is same like java script Functional but this Function return JSX</li>
+    <li>if you create component js file first letter must be capital like : Header.js</li>
+</ul>
+
+<app-code file="1 Header" dot="jsx" code="
+ import React from 'react'
+  
+ export default function Header() {
+    return (
+      <h1>this header</h1>
+    );
+ }
+"></app-code>
+
+<ul data-list="App component">
+    <li>in react use App Component it's call to Root component</li>
+    <li>all component is load in Root component</li>
+</ul>
+
+<app-code file="2 App" dot="jsx" code="
+   import React from 'react'
+   import Header from './Header';
+        
+    export default function App() {
+       return (
+         <Header/>//if have not child node:self closing tag
+           //(or)
+         <Header><Header/> //if have child node
+     );
+}
+"></app-code>
+
+<ul data-list="index js">
+    <li>root component import in index.js</li>
+ </ul>
+
+<app-code file="2 index" dot="js" code="
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+ import App from ''./app/App';
+   
+ ReactDOM.render(
+     <App/>,
+     document.getElementById('root')
+ )
+"></app-code>

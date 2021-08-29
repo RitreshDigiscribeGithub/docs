@@ -1,3 +1,4 @@
+
 class Navbar extends HTMLElement {
 
   constructor() {
@@ -39,7 +40,13 @@ class Navbar extends HTMLElement {
     return [
       { path: 'app-booting', topic: 'app booting' },
       { path: 'fragment', topic: 'fragment' },
-      { path: 'jsx', topic: 'jsx react' }
+      { path: 'jsx', topic: 'jsx react' },
+      { path: 'styles-in-react', topic: 'styles in react' },
+      { path: 'react-components', topic: 'react components' },
+      { path: 'modules-import-export', topic: 'modules import and export' },
+      { path: 'react-components-props', topic: 'react components props' },
+      { path: 'conditional-rendering', topic: 'conditional rendering' },
+      { path: 'hooks-in-react', topic: 'hooks in react' },
     ]
   }
 

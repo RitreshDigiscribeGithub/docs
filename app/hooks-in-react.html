@@ -1,0 +1,37 @@
+<span class="fs-2">what is Hooks</span>
+<ul>
+    <li>1. Hooks is introdued in react 16.8 version.</li>
+    <li>2. Hooks is use in function components at top palcement.</li>
+    <li>3  Hooks is calling in body of function</li>
+    <li>4. Hooks can not use with class.</li>
+    <li>5. Hooks is use for change state in components</li>
+</ul>
+
+<span class="fs-2">type of Hooks</span>
+<ul data-list="1 . useState">
+    <li>- useState return two item cureent vaule and update value</li>
+    <li>- syntax : <strong>const [var:&lt;varable&gt;, updateToVar: &lt;function&gt;] = useState(value)</strong> </li>
+</ul>
+<app-code file="component" dot="jsx" code="
+  import React, { useState } from 'react';
+
+  export default function Component() {
+   //
+   const [a, a_upadate] = useState(0); //useState
+   function incriment() {
+     a_upadate(a + 1);
+   }
+
+   return (
+     <>
+       <h1>{a}</h1>
+       <button onClick={incriment}>click me</button>
+     </>
+   );
+  }
+"></app-code>
+
+
+
+
+

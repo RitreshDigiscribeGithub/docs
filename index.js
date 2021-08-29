@@ -31,11 +31,11 @@ function HTMLrender() {
 
             if (urlPath === '') {
                 xhttp.open("GET", `./app/home.html`, true)
-                title.innerText = 'home'
+                title.innerText = 'React | home'
                 navTitle.innerText = 'home'
             } else {
                 xhttp.open("GET", `./app/${urlPath}.html`, true)
-                title.innerText = urlPath.replace("-", " ")
+                title.innerText = 'React | '+urlPath.replace("-", " ")
                 navTitle.innerText = urlPath.replace("-", " ")
             }
             xhttp.send()

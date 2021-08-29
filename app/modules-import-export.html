@@ -1,0 +1,66 @@
+<ul data-list="export default">
+    <li>export default is export variable, function anything is default</li>
+    <li>default means is when not export another value,function etc.</li>
+ </ul>
+ <app-code file="1 rendom" dot="js" code="
+  const uaserName = 'abc name';
+
+  export default uaserName;//export default is export variable, function anything is default
+"></app-code>
+
+<app-code file="2 Component" dot="jsx" code="
+ //import to variable in component.jsx
+
+ import React from 'react';
+ import uaserName from './rendom'
+ export default function Main() {
+    return (
+        <h1>this main component : {uaserName}</h1>
+    )
+ }
+"></app-code>
+
+
+ <ul data-list="export default with multiple export use recommended">
+</ul>
+<app-code file="1 rendom" dot="js" code="
+  const uaserName = 'Ritesh goswami';
+  function addtion() {
+    return 2000 + 2000;
+  }
+  function sub() {
+    return 21000 + 1000;
+  }
+  export default uaserName;//export default 
+  export { addtion, sub }//order must be same
+"></app-code>
+<app-code file="2 Component" dot="jsx" code="
+ import React from 'react';
+ import uaserName ,{ addtion, sub } from './rendom';
+
+ export default function Main() {
+     return (
+        <>
+        <h1>this main component : {uaserName}</h1>
+        <h1>addtion : { addtion()} and subtraction is { sub() }</h1>
+        </>
+      )
+}
+"></app-code>
+
+<ul data-list="wild card import">
+</ul>
+
+<app-code file="2 Component" dot="jsx" code="
+import React from 'react';
+import * form addDate from './rendom';//wild card import
+//'addDate' is object
+export default function Main() {
+    return (
+        <>
+        <h1>this main component : {alldata.default}</h1>//if have default use 'default' 
+        <h1>addtion : { alldata.addtion()} and subtraction is { alldata.sub() }</h1>
+        </>
+    )
+}
+"></app-code>

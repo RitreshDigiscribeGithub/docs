@@ -1,0 +1,52 @@
+<ul data-list="pass parameter in component">
+    <li>components props in like function augment and parameter</li>
+</ul>
+
+<app-code file="1 App" dot="jsx" code="
+  export default function App() {
+    return (
+      <>
+        //pass data is component attribute
+        <Card title='python' />
+      </>
+    );
+  }
+"></app-code>
+
+<ul>
+    <li>components props in like function augment and parameter</li>
+</ul>
+<app-code file="2 Card" dot="jsx" code="
+ export default function Card(props) {
+    console.log(props); //object (props.property)
+    return (
+      <div className='card'>
+          <h1>{props.title}</h1>
+      </div>
+    );
+ }
+"></app-code>
+
+
+<ul data-list="react components props with Array">
+    <li>use map method to render to array data </li>
+ </ul>
+ <app-code file="1 App" dot="jsx" code="
+  const listData = [
+    { name: 'python' },
+    { name: 'java script' },
+    { name: 'java' }
+  ];
+
+ export default function App() {
+   return (
+     <div>
+      {
+        listData.map((data) => {
+          return <Card title={data.name} />;//card component
+        })
+      }
+   </div>
+   );
+ }
+"></app-code>

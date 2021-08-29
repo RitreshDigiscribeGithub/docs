@@ -1,0 +1,39 @@
+<ul data-list="If Else Statement in React"></ul>
+<app-code file="component" dot="jsx" code="
+  import React from 'react';
+  // Array Map Method
+
+  const input = 'python';
+  function Frameworks() {
+    if (input === 'java') {
+      return (<p>Spring,Hibernate</p>);
+   } else if (input === 'python') {
+      return (<p>Django,Flask</p>);
+   } else {
+     return (<h1>data not fount</h1>);
+   }
+ }
+
+ export default function Component() {
+   return (
+     <>
+        {Frameworks()}//call to function
+           //(or)
+        <Frameworks/>//call to function
+     </>
+   );
+ }
+"></app-code>
+
+<ul data-list="Ternary Operator in React"></ul>
+<app-code file="component" dot="jsx" code="
+ //syntax : conditional ? 'true statement' : 'false statement'
+
+ export default function Component() {
+   return (
+     <>
+       {(input === 'java') ? 'java list' : 'python list'}
+     </>
+   );
+ }
+"></app-code>
