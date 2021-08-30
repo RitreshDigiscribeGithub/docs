@@ -16,7 +16,7 @@ class Navbar extends HTMLElement {
         </div>
       </div>
       </div>
-      
+
         <!-- drawer -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
@@ -47,6 +47,8 @@ class Navbar extends HTMLElement {
       { path: 'react-components-props', topic: 'react components props' },
       { path: 'conditional-rendering', topic: 'conditional rendering' },
       { path: 'hooks-in-react', topic: 'hooks in react' },
+      { path: 'event', topic: 'event' },
+      { path: 'react-form', topic: 'react form' },
     ]
   }
 
@@ -56,5 +58,3 @@ class Navbar extends HTMLElement {
 }
 
 window.customElements.define('app-navbar', Navbar)
-
-

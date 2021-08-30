@@ -1,0 +1,36 @@
+<h1>React form</h1>
+
+<ul data-list="controlled Component">
+    <li>when react Component control to input of form that's called to controlled Component</li>
+</ul>
+<app-code file="Component" dot="jsx" code="
+   export default function Component() {
+      const [value, setstate] = useState('');
+      const [final, setfinal] = useState();
+
+     const InputEv = (event) => {
+       setstate(event.target.value);
+     };
+
+     const onSubmit = () => {
+       setfinal(value);
+     };
+
+     return (
+       <>
+         <h1>final value : {final}</h1>
+         <h1>current value: {value}</h1>
+
+         <p>
+           <label htmlFor=''>name</label>
+           <input type='text' onChange={InputEv} value={value} />
+         </p>
+
+         <button type='button' onClick={onSubmit}>
+           submit now
+         </button>
+            
+       </>
+     );
+   }
+"></app-code>
