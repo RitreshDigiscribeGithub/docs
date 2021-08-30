@@ -3,34 +3,164 @@
 <ul data-list="controlled Component">
     <li>when react Component control to input of form that's called to controlled Component</li>
 </ul>
+<ul data-list="get input value in">
+</ul>
 <app-code file="Component" dot="jsx" code="
    export default function Component() {
-      const [value, setstate] = useState('');
-      const [final, setfinal] = useState();
+        const [value, setstate] = useState('');
+        const [final, setfinal] = useState();
 
-     const InputEv = (event) => {
-       setstate(event.target.value);
+        const InputEv = (event) => {
+          setstate(event.target.value);
+        };
+
+        const onSubmit = () => {
+          setfinal(value);
+        };
+
+        return (
+          <>
+            <h1>final value : {final}</h1>
+            <h1>current value: {value}</h1>
+
+            <p>
+              <label htmlFor=''>name</label>
+              <input type='text' onChange={InputEv} value={value} />
+            </p>
+
+            <button type='button' onClick={onSubmit}>
+              submit now
+            </button>
+
+          </>
+        );
+   }
+"></app-code>
+
+<ul data-list="muliple input in form">
+</ul>
+<app-code  file="Component" dot="jsx" code="
+  import React, { useState } from 'react';
+
+  export default function Component() {
+      const [formGroup, formState] = useState({
+        username: '',
+        email: '',
+        phone: '',
+      });
+
+      const formEvent = (event) => {
+      //event.target.name = here target to input name attr value
+      //event.target.value = here target to all input value
+
+         const { name, value } = event.target; //using object destructuring
+
+          formState((previous) => {
+          //previous is hold to 'previous value of input'
+             if (name === 'username') {
+               return {
+                 username: value, //get value of username
+                 email: previous.email, //hold previous value:email
+                 phone: previous.phone, //hold previous value:phone
+             };
+             } else if (name === 'email') {
+              return {
+                username: previous.username, //hold previous value:username
+                email: value, //get value of email
+                phone: previous.phone, //hold previous value:phone
+            };
+            } else if (name === 'phone') {
+              return {
+                username: previous.username, //hold previous value:username
+                email: previous.email, //hold previous value:email
+                phone: value, //get value of phone
+            };
+          }
+        });
+      };
+
+     const formSubmit = (event) => {
+       event.preventDefault();
+       console.log(formGroup); //all form input value here in object
      };
 
-     const onSubmit = () => {
-       setfinal(value);
+    return (
+      <>
+         <form onSubmit={formSubmit}>
+           <p>
+            <label>username</label>
+            <input type='text' name='username' onChange={formEvent} />
+          </p>
+          <p>
+            <label>email</label>
+            <input type='text' name='email' onChange={formEvent} />
+          </p>
+          <p>
+            <label>phone</label>
+            <input type='number' name='phone' onChange={formEvent} />
+          </p>
+          <p>
+            <button type='submit'>submit</button>
+          </p>
+        </form>
+      </>
+    );
+}
+"></app-code>
+
+
+<ul data-list="use spread operator for muliple input in form">
+</ul>
+<app-code file="Component" dot="jsx" code="
+   import React, { useState } from 'react';
+
+   export default function Component() {
+
+      const [formGroup, formState] = useState({
+         username: '',
+         email: '',
+         phone: '',
+      });
+
+      const formEvent = (event) => {
+      //event.target.name = here target to input name attr value
+      //event.target.value = here target to all input value
+      const { name, value } = event.target; //using object destructuring
+
+      formState(() => {
+        return {
+             ...formGroup, // spread operator concat empty object
+             [name]: value, //here check value of name attr then assign value to empty object
+             };
+         });
+      };
+
+     const formSubmit = (event) => {
+       event.preventDefault();
+       console.log(formGroup); //all form input value here in object
      };
 
      return (
        <>
-         <h1>final value : {final}</h1>
-         <h1>current value: {value}</h1>
-
-         <p>
-           <label htmlFor=''>name</label>
-           <input type='text' onChange={InputEv} value={value} />
-         </p>
-
-         <button type='button' onClick={onSubmit}>
-           submit now
-         </button>
-            
-       </>
+         <form onSubmit={formSubmit}>
+           <p>
+             <label>username</label>
+             <input type='text' name='username' onChange={formEvent} />
+           </p>
+           <p>
+             <label>email</label>
+             <input type='text' name='email' onChange={formEvent} />
+           </p>
+           <p>
+             <label>phone</label>
+             <input type='number' name='phone' onChange={formEvent} />
+           </p>
+           <p>
+             <button type='submit'>submit</button>
+           </p>
+        </form>
+      </>
      );
+
    }
 "></app-code>

@@ -82,3 +82,6 @@ pre[class*='language-'] {
 .nav-title {
   text-transform: capitalize;
 }
+.offcanvas-start{
+  width: 300px !important;
+}
