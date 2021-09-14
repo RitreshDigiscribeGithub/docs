@@ -1,6 +1,4 @@
-
 class Navbar extends HTMLElement {
-
   constructor() {
     super();
     this.innerHTML = `<div class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -24,37 +22,39 @@ class Navbar extends HTMLElement {
           </div>
           <div class="">
           <ul class="list-group">
-            ${this.list().map(e => {
-      return `<li onclick="location.href = '#${e.path}'"
+            ${this.list()
+              .map((e) => {
+                return `<li onclick="location.href = '#${e.path}'"
                 class="list-group-item" data-bs-dismiss="offcanvas" aria-label="Close" aria-current="true">
                 ${e.topic}
-                 </li>`
-    }).join('\n')
-      }
+                 </li>`;
+              })
+              .join("\n")}
            </ul>
           </div>
-      </div>`
+      </div>`;
   }
 
   list() {
     return [
-      { path: 'app-booting', topic: 'app booting' },
-      { path: 'fragment', topic: 'fragment' },
-      { path: 'jsx', topic: 'jsx react' },
-      { path: 'styles-in-react', topic: 'styles in react' },
-      { path: 'react-components', topic: 'react components' },
-      { path: 'modules-import-export', topic: 'modules import and export' },
-      { path: 'react-components-props', topic: 'react components props' },
-      { path: 'conditional-rendering', topic: 'conditional rendering' },
-      { path: 'hooks-in-react', topic: 'hooks in react' },
-      { path: 'event', topic: 'event' },
-      { path: 'react-form', topic: 'react form' },
-    ]
+      { path: "app-booting", topic: "app booting" },
+      { path: "fragment", topic: "fragment" },
+      { path: "jsx", topic: "jsx react" },
+      { path: "styles-in-react", topic: "styles in react" },
+      { path: "react-components", topic: "react components" },
+      { path: "modules-import-export", topic: "modules import and export" },
+      { path: "react-components-props", topic: "react components props" },
+      { path: "conditional-rendering", topic: "conditional rendering" },
+      { path: "hooks-in-react", topic: "hooks in react" },
+      { path: "event", topic: "event" },
+      { path: "react-form", topic: "react form" },
+      { path: "context-api", topic: "context api" },
+    ];
   }
 
   titlePush() {
-    return location.hash
+    return location.hash;
   }
 }
 
-window.customElements.define('app-navbar', Navbar)
+window.customElements.define("app-navbar", Navbar);
