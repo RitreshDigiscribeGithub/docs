@@ -1,0 +1,49 @@
+<ul data-list="useContext Hook ">
+    <li>useContext Hook is remove to call back hell in Consumer part</li>
+    <li>useContext Hook is use inside Component</li>
+    <li>syntax: <strong>const f = useContext(NameOfContext);</strong></li>
+</ul>
+
+<app-code
+  file="component-A"
+  dot="jsx"
+  code="
+  import React, { createContext } from 'react';
+  import Child from '/Child';
+
+  const FirstContext = createContext();//create Context
+  const SecondContext = createContext();//create Context
+
+  export default function ComponentA() {
+    return (
+      <>
+       <FirstContext.Provider value={'First value'}>
+         <SecondContext.Provider value={'Second value'}>
+          <Child />{/* target component */}
+         </SecondContext.Provider>{/* set Provider for SecondContext */}
+       </FirstContext.Provider>{/* set Provider for FirstContext */}
+     </>
+   );
+ }
+
+ export { FirstContext, SecondContext };//export to context"></app-code>
+
+ <app-code
+   file="component-Z"
+   dot="jsx"
+   code="
+import React, { useContext } from 'react';
+import { FirstContext, SecondContext } from './Component';
+
+ export default function Child() {
+   const f = useContext(FirstContext);
+   const s = useContext(SecondContext);
+   return (
+     <>
+       <ul>
+         <li>FirstContext data : {f}</li>
+         <li>SecondContext data : {s}</li>
+       </ul>
+     </>
+   );
+ }"></app-code>

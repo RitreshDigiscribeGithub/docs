@@ -1,0 +1,39 @@
+<ul data-list="useEffect Hook Hook">
+    <li>when component is rendered or any Changes in component then work useEffect Hook</li>
+    <li>useEffect is work every calling <strong>render()</strong> function</li>
+    <li>useEffect Hook working like class component lifecycle methood <strong>componentDidMount</strong>,
+      <strong>componentDidUpdate</strong>,<strong>componentWillUnmount</strong>
+    </li>
+    <li>syntax: <strong>useEffect(()={ ...code });</strong></li>
+</ul>
+
+<app-code
+  file="component"
+  dot="jsx"
+  code="
+  import React, { useEffect } from 'react';
+  import { useState } from 'react';
+
+  export default function Component() {
+    const [count, setstate] = useState(0); //use for changes
+
+    //--------------useEffect Hook Hook----------
+
+    useEffect(() => {
+      console.log(`component is loaded and detect some changes`);
+    });
+    //useEffect work like componentDidMount and componentDidUpdate
+    // when component is rendered and any Changes in component then work useEffect Hook
+
+    //useEffect use as only componentDidMount
+    useEffect(() => {
+     console.log(`component is loaded`);
+    }, []); //useEffect only work after component loaded like componentDidMount
+
+    return (
+      <>
+        <h1>{count}</h1>
+        <button onClick={() => setstate(count + 1)}>button</button>
+      </>
+    );
+ }"></app-code>

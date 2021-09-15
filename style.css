@@ -1,4 +1,4 @@
-@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 /*okaidia :  https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css' */
 
@@ -34,7 +34,7 @@ pre {
   left: 17px;
   font-weight: 700;
 }
-pre[class*='language-'] {
+pre[class*="language-"] {
   padding: 1em;
   margin: 0px;
   overflow: auto;
@@ -82,6 +82,9 @@ pre[class*='language-'] {
 .nav-title {
   text-transform: capitalize;
 }
-.offcanvas-start{
+.offcanvas-start {
   width: 300px !important;
+}
+.h-100 {
+  height: 100vh !important;
 }

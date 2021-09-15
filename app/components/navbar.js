@@ -49,6 +49,8 @@ class Navbar extends HTMLElement {
       { path: "event", topic: "event" },
       { path: "react-form", topic: "react form" },
       { path: "context-api", topic: "context api" },
+      {path:'use-context-hook',topic: "useContext"},
+      {path:'use-effect-Hook',topic:'useEffect Hook'}
     ];
   }
 
